@@ -192,7 +192,7 @@ impl EguiSDL2State {
         match event {
             // handle when window Resized and SizeChanged.
             Window { win_event, .. } => match win_event {
-                WindowEvent::Resized(x, y) | sdl2::event::WindowEvent::SizeChanged(x, y) => {
+                WindowEvent::Resized(..) | sdl2::event::WindowEvent::SizeChanged(..) => {
                     self.update_screen_rect(window);
                     self.dpi_data = self.dpi_mode.get_dpi(window, window.subsystem());
                 }
